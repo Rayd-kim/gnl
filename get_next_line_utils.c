@@ -53,19 +53,19 @@ char	*str_join(char *s1, char *s2)
 	int		index1;
 	int		index2;
 	char	*join_1_2;
+	int		s1_len;
+	int		s2_len;
 
-	index1 = 0;
+	index1 = -1;
 	index2 = 0;
-	join_1_2 = (char *)malloc(sizeof(char) * \
-			(ft_strlen(s1) + ft_strlen(s2) + 1));
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
+	join_1_2 = (char *)malloc(sizeof(char) * (s1_len + s2_len + 1));
 	if (join_1_2 == 0)
 		return (NULL);
-	while (index1 < ft_strlen(s1))
-	{
+	while (++index1 < s1_len)
 		join_1_2[index1] = s1[index1];
-		index1++;
-	}
-	while (index2 < ft_strlen(s2))
+	while (index2 < s2_len)
 	{
 		join_1_2[index1] = s2[index2];
 		index1++;

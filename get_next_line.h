@@ -15,7 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-
+# define OPEN_MAX 256
 int		ft_strlen(char *s1);
 char	*str_cut(char *str);
 char	*str_join(char *s1, char *s2);

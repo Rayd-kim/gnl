@@ -93,7 +93,7 @@ char	*get_next_line(int fd)
 	static int	check = 0;
 	char		*join;
 
-	if (check == 1 || fd < 0)
+	if (check == 1 || fd < 0 || fd > OPEN_MAX)
 		return (NULL);
 	str = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (str == 0)
